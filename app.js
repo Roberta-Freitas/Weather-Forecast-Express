@@ -4,6 +4,7 @@ const https = require('https');
 const app = express();
 
 const currentYear = new Date().getFullYear();
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
@@ -33,7 +34,7 @@ app.post("/", function(req, res){
   const apiKey = process.env.API_KEY;
   const units = "metric";
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=" + units + "&appid=" + apiKey + "";
-  const port = process.env.PORT || 3000;
+
 
   https.get(url, function(response) {
     console.log(response.statusCode);
