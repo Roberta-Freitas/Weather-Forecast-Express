@@ -20,6 +20,16 @@ app.get("/", function(req, res){
 
 app.post("/", function(req, res){
   const query = req.body.cityName;
+  // Check if cityName is empty
+  if (!query) {
+    // Show an alert message and redirect back to the index page
+    res.send(
+      `<script>alert('Please insert the city name'); window.location.href='/';</script>`
+    );
+    return;
+  }
+
+
   const apiKey = process.env.API_KEY;
   const units = "metric";
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=" + units + "&appid=" + apiKey + "";
