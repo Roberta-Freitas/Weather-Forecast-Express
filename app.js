@@ -33,6 +33,7 @@ app.post("/", function(req, res){
   const apiKey = process.env.API_KEY;
   const units = "metric";
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=" + units + "&appid=" + apiKey + "";
+  const port = process.env.PORT || 3000;
 
   https.get(url, function(response) {
     console.log(response.statusCode);
@@ -68,6 +69,6 @@ app.post("/", function(req, res){
 });
 
 
-app.listen(3000, function () {
-  console.log("Running on localhost 3000");
+app.listen(port, function () {
+  console.log("Running on port " + port);
 });
