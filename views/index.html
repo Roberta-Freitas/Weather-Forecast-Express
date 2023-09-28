@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <script src="/app.js"></script>
+  </head>
+  <body>
+    <div class="container mx-auto text-center p-10 rounded-xl my-10 bg-sky-500">
+      <h2 class="text-3xl text-white text-center">Check the weather forecast of your favorite city:</h2>
+      <form action="/" method="post" class="p-4 mt-4">
+        <div class="form-group text-xl text-gray-600 text-left">
+          <label for="cityInput">City Name:</label>
+          <input id="cityInput" type="text" name="cityName" class="form-control">
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button
+        class="bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-400 transition-colors text-xl" type="submit">
+        Check
+      </button>
+    </form>
+    </div>
+    <div class="card-footer">
+      &copy; <span id="currentYear"></span> Weather App
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+  </body>
+</html>
