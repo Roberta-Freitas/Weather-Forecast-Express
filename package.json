@@ -4,19 +4,16 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss build public/css/styles.css -o public/css/styles.css"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.1.4",
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "https": "^1.0.0"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "express": "^4.18.2"
   }
 }
+
